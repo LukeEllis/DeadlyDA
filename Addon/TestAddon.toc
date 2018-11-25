@@ -2,6 +2,8 @@
 ## Title: TestAddon
 ## Author: Luke Ellis
 ## Version: 0.1
+## SavedVariables: mySavedVar
 
-main.lua
 combat.lua
+levelup.lua
+login.lua
