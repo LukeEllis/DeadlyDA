@@ -1,10 +1,12 @@
 ## Interface: 80000
+## Version: 0.1 
 ## Title: TestAddon
 ## Author: Luke Ellis
-## Version: 0.1 
-## SavedVariables: mySavedVar
+## Notes: Displays a welcome message when you get to your home zone.
+## SavedVariables: mySavedVar, WelcomeHomeDB
+## OptionalDeps: Ace3
+## X-Embeds: Ace3
 
-combat.lua
-levelup.lua
-login.lua
-spellattack.lua
+embeds.xml
+
+Core.lua
