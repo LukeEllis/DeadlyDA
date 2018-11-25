@@ -1,0 +1,7 @@
+## Interface: 80000
+## Title: TestAddon
+## Author: Luke Ellis
+## Version: 0.1
+
+main.lua
+combat.lua
