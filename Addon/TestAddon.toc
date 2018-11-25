@@ -1,9 +1,10 @@
 ## Interface: 80000
 ## Title: TestAddon
 ## Author: Luke Ellis
-## Version: 0.1
+## Version: 0.1 
 ## SavedVariables: mySavedVar
 
 combat.lua
 levelup.lua
 login.lua
+spellattack.lua
