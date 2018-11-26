@@ -173,19 +173,20 @@ function TestAddon:UPDATE_INSTANCE_INFO()
     local instanceName, _, _, instanceDifficultyName = GetInstanceInfo()
 
     for i = 1 , table.getn(dungeonNames) do
-        if instanceName == dungeonNames[i] and instanceDifficultyName == "Mythic" then
+        if instanceName == dungeonNames[i] then
             foundDungeon = true
-            self:Print("You are in " .. instanceName .. " .")
             break
         end
     end
-    
-    if foundDungeon then
+
+    if foundDungeon and instanceDifficultyName == "Mythic" then
         self:Print("You have entered " .. instanceName .. " on Mythic difficulty.")
-        -- Check Achievement
-        self:Print(dungeonAchievement[instanceName][1])
+        self:Print(table.maxn(dungeonAchievement[instanceName]))
+    
+        for value = 1, table.maxn(dungeonAchievement[instanceName]) do
+            self:Print(dungeonAchievement[instanceName][value])
+        end
     else
         self:Print("I'm not sure where you are.")
     end
-
 end
