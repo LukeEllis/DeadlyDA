@@ -196,11 +196,11 @@ function TestAddon:UPDATE_INSTANCE_INFO()
         self:Print("You have entered " .. instanceName .. " on Mythic difficulty.")
         self:Print(table.maxn(dungeonAchievement[instanceName]))
     
-        for value = 1, table.maxn(dungeonAchievement[instanceName]), 2 do
+        for value2 = 1, table.maxn(dungeonAchievement[instanceName]), 2 do
 
 
             local checkbox1 = AceGUI:Create("CheckBox")
-            checkbox1:SetLabel(dungeonAchievement[instanceName][value])
+            checkbox1:SetLabel(dungeonAchievement[instanceName][value2])
             checkbox1:SetWidth(150)
             checkbox1:SetType("checkbox")
             checkbox1:ToggleChecked(true)
