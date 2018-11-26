@@ -183,8 +183,8 @@ function TestAddon:UPDATE_INSTANCE_INFO()
         self:Print("You have entered " .. instanceName .. " on Mythic difficulty.")
         self:Print(table.maxn(dungeonAchievement[instanceName]))
     
-        for value = 1, table.maxn(dungeonAchievement[instanceName]) do
-            self:Print(dungeonAchievement[instanceName][value])
+        for value = 2, table.maxn(dungeonAchievement[instanceName]), 2 do
+            self:Print(GetAchievementInfo(dungeonAchievement[instanceName][value]))
         end
     else
         self:Print("I'm not sure where you are.")
