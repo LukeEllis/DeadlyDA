@@ -3,7 +3,7 @@
 ## Title: TestAddon
 ## Author: Luke Ellis
 ## Notes: Displays a welcome message when you get to your home zone.
-## SavedVariables: mySavedVar, WelcomeHomeDB
+## SavedVariables: mySavedVar, TestAddonDB
 ## OptionalDeps: Ace3
 ## X-Embeds: Ace3
 
