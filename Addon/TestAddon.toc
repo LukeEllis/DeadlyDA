@@ -9,5 +9,6 @@
 
 embeds.xml
 
-Core.lua
+core.lua
 dungeonInfo.lua
+gui.lua
