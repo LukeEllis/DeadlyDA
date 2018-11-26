@@ -134,7 +134,7 @@ end
 -- VII. Pet commands
 -- Declares when the player's pet attacks, and dismisses the pet when the pet stops attacking.
 function TestAddon:PET_ATTACK_START()
-    self:Print("Pet is currently attacking")
+    self:Print("Pet is currently attacking.")
 end
 
 function TestAddon:PET_ATTACK_STOP()
@@ -168,7 +168,7 @@ end
 -- Checks for correct environment, and displays achievement tips during combat.
 
 function TestAddon:UPDATE_INSTANCE_INFO()
-    self:Print("made it to instance info")
+    self:Print("Made it to instance info.")
     local foundDungeon = false
     local instanceName, _, _, instanceDifficultyName = GetInstanceInfo()
 
@@ -181,8 +181,11 @@ function TestAddon:UPDATE_INSTANCE_INFO()
     end
     
     if foundDungeon then
-        self:Print("You have entered " .. instanceName .. "on Mythic difficulty.")
+        self:Print("You have entered " .. instanceName .. " on Mythic difficulty.")
+        -- Check Achievement
+        self:Print(dungeonAchievement[instanceName][1])
     else
         self:Print("I'm not sure where you are.")
     end
+
 end
