@@ -21,11 +21,21 @@ local textStore
 local frame = AceGUI:Create("Frame")
 frame:SetTitle("Deadly Dungeon Achievements")
 frame:SetStatusText("Achievement Module Toggle")
-frame:SetWidth(600)
-frame:SetHeight(150)
-frame:SetPoint("TOP", 0, -50)
 frame:SetCallback("OnClose", function(widget) AceGUI:Release(widget) end)
-frame:SetLayout("Flow")
+frame:SetLayout("Fill")
+
+-- Create the TabGroup
+local tab =  AceGUI:Create("TabGroup")
+tab:SetLayout("Flow")
+-- Setup which tabs to show
+tab:SetTabs({{text="Tab 1", value="tab1"}, {text="Tab 2", value="tab2"}})
+-- Register callback
+tab:SetCallback("OnGroupSelected", SelectGroup)
+-- Set initial Tab (this will fire the OnGroupSelected callback)
+tab:SelectTab("tab1")
+
+-- add to the frame container
+frame:AddChild(tab)
 
 -- II. Chat and Configuration
 -- Sets options for chat commands and addon configurations
@@ -199,19 +209,66 @@ function TestAddon:UPDATE_INSTANCE_INFO()
         for value = 1, table.maxn(dungeonAchievement[instanceName]), 2 do
 
 
-            local checkbox1 = AceGUI:Create("CheckBox")
-            checkbox1:SetLabel(dungeonAchievement[instanceName][value])
-            checkbox1:SetWidth(150)
-            checkbox1:SetType("checkbox")
-            checkbox1:ToggleChecked(true)
-            checkbox1:SetCallback("OnValueChanged", function(widget, event, value) 
-                if value then
-                    self:Print("Toggling boss modules ON for achievement " )
-                else
-                    self:Print("Toggling boss modules OFF for achievement " )
+            -- local checkbox1 = AceGUI:Create("CheckBox")
+            -- checkbox1:SetLabel(dungeonAchievement[instanceName][value])
+            -- checkbox1:SetWidth(75)
+            -- checkbox1:SetType("checkbox")
+            -- checkbox1:ToggleChecked(true)
+            -- checkbox1:SetCallback("OnValueChanged", function(widget, event, value) 
+            --     if value then
+            --         self:Print("Toggling boss modules ON for achievement " )
+            --     else
+            --         self:Print("Toggling boss modules OFF for achievement " )
+            --     end
+            -- end)
+            -- frame:AddChild(checkbox1)
+
+            local function DrawGroup1(container)
+                local desc = AceGUI:Create("Label")
+                desc:SetText("This is Tab 1")
+                desc:SetFullWidth(true)
+                container:AddChild(desc)
+                
+                local checkbox1 = AceGUI:Create("CheckBox")
+                checkbox1:SetLabel(dungeonAchievement[instanceName][value])
+                checkbox1:SetWidth(75)
+                checkbox1:SetType("checkbox")
+                checkbox1:ToggleChecked(true)
+                checkbox1:SetCallback("OnValueChanged", function(widget, event, value)
+                    if value then
+                        self:Print("Toggling boss modules ON for achievement " )
+                    else
+                        self:Print("Toggling boss modules OFF for achievement " )
+                    end
+                end)
+                container:AddChild(checkbox1)
+            end
+
+            local function DrawGroup2(container)
+                local checkbox2 = AceGUI:Create("CheckBox")
+                checkbox2:SetLabel(dungeonAchievement[instanceName][value])
+                checkbox2:SetWidth(75)
+                checkbox2:SetType("checkbox")
+                checkbox2:ToggleChecked(true)
+                checkbox2:SetCallback("OnValueChanged", function(widget, event, value)
+                    if value then
+                        self:Print("Toggling boss modules ON for achievement " )
+                    else
+                        self:Print("Toggling boss modules OFF for achievement " )
+                    end
+                end)
+                container:AddChild(checkbox2)
+            end
+
+            -- Callback function for OnGroupSelected
+            local function SelectGroup(container, event, group)
+                container:ReleaseChildren()
+                if group == "tab1" then
+                    DrawGroup1(container)
+                elseif group == "tab2" then
+                    DrawGroup2(container)
                 end
-            end)
-            frame:AddChild(checkbox1)
+            end
 
             -- self:Print(GetAchievementInfo(dungeonAchievement[instanceName][value]))
         end
