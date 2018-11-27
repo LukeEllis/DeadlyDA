@@ -12,20 +12,21 @@
 
 -- I. New Addon
 -- Initializes a new Ace3 Addon
+
 TestAddon = LibStub("AceAddon-3.0"):NewAddon("TestAddon", "AceConsole-3.0", "AceEvent-3.0")
 
 local AceGUI = LibStub("AceGUI-3.0")
 
-local textStore
+-- local textStore
 
-local frame = AceGUI:Create("Frame")
-frame:SetTitle("Deadly Dungeon Achievements")
-frame:SetStatusText("Achievement Module Toggle")
-frame:SetWidth(600)
-frame:SetHeight(150)
-frame:SetPoint("TOP", 0, -50)
-frame:SetCallback("OnClose", function(widget) AceGUI:Release(widget) end)
-frame:SetLayout("Flow")
+-- local frame = AceGUI:Create("Frame")
+-- frame:SetTitle("Deadly Dungeon Achievements")
+-- frame:SetStatusText("Achievement Module Toggle")
+-- frame:SetWidth(600)
+-- frame:SetHeight(150)
+-- frame:SetPoint("TOP", 0, -50)
+-- frame:SetCallback("OnClose", function(widget) AceGUI:Release(widget) end)
+-- frame:SetLayout("Flow")
 
 -- II. Chat and Configuration
 -- Sets options for chat commands and addon configurations
@@ -211,7 +212,7 @@ function TestAddon:UPDATE_INSTANCE_INFO()
                     self:Print("Toggling boss modules OFF for achievement " )
                 end
             end)
-            frame:AddChild(checkbox1)
+            g_frame:AddChild(checkbox1)
 
             -- self:Print(GetAchievementInfo(dungeonAchievement[instanceName][value]))
         end

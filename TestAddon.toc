@@ -7,7 +7,9 @@
 ## OptionalDeps: Ace3
 ## X-Embeds: Ace3
 
-embeds.xml
+Core\embeds.xml
+Core\Dungeon_Info.lua
+
+Interface\gui.lua
 
 core.lua
-dungeonInfo.lua
