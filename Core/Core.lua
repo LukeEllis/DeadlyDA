@@ -31,6 +31,7 @@ function DeadlyDungeonAchievements:UPDATE_INSTANCE_INFO()
         -- Fixes bug where copies of Check Boxes were being created
         --  everytime you walked into a dungeon
         g_Main_Frame:ReleaseChildren()
+        g_Main_Frame:Show()
         for value = 1, table.maxn(g_achievements[instanceName]), 2 do
             DeadlyDungeonAchievements:CreateCheckBox(g_achievements[instanceName][value])
         end
