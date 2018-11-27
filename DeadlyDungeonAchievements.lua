@@ -15,7 +15,6 @@ end
 function DeadlyDungeonAchievements:OnEnable()
     -- Called when the addon is enabled
     -- Where the events are registered
-    self:Print("DeadlyDungeonA has loaded.")
-    self:RegisterEvent("ZONE_CHANGED")
+    self:Print("DeadlyDungeonAchievement has loaded.")
     self:RegisterEvent("UPDATE_INSTANCE_INFO")
 end
