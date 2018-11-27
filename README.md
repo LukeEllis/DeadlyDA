@@ -1,2 +1,2 @@
-# TestAddon
-Test Addon for World of Warcraft
+# DeadlyDA
+DeadlyDA: The DBM for Dungeon Achievements
