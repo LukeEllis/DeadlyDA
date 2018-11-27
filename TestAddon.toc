@@ -3,11 +3,13 @@
 ## Title: TestAddon
 ## Author: Luke Ellis
 ## Notes: Displays a welcome message when you get to your home zone.
-## SavedVariables: mySavedVar, TestAddonDB
 ## OptionalDeps: Ace3
 ## X-Embeds: Ace3
 
-embeds.xml
+Core\embeds.xml
+Core\Dungeon_Info.lua
+Core\Core.lua
 
-core.lua
-dungeonInfo.lua
+Interface\Interface.lua
+
+DeadlyDungeonAchievements.lua
